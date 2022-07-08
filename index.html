@@ -9,8 +9,18 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    <input type="range" min="4" max="64" id="slider" value="16"/>
-    <output id="sliderOut"></output>
+    <h1>Etch-a-Sketch!</h1>
+    <h2>Draw Settings</h2>
+    <h3>Brush Color:</h3>
+    <input type="color" class="colorPanel" value="#008000">
+    <button class="rainbowBtn">Rainbow Mode</button>
+    <button class="colorBtn">Color Mode</button>
+    <button class="eraserBtn">Eraser Mode</button>
+
+    <div>
+        <input type="range" min="4" max="64" id="slider" value="16"/>
+        <output id="sliderOut"></output>
+    </div> 
     <div class="canvas"></div>
 </body>
 </html>
