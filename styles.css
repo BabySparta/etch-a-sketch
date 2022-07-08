@@ -1,0 +1,20 @@
+:root {
+    --grid-cols: 4;
+    --grid-rows: 4;
+}
+.canvas {
+    display: grid;
+    gap: 1px;
+    grid-template-columns: repeat(var(--grid-cols), 1fr);
+    grid-template-rows: repeat(var(--grid-cols), 1fr);
+    width: 700px;
+    height: 700px;
+}
+
+.pixel {
+    width: 1fr;
+    height: 1fr;
+    outline-style: solid;
+    outline-color: black;
+    outline-width: 1px;
+}
