@@ -63,7 +63,7 @@ function paint (e) {
     } else if (currentMode === 'color') {
     brush.backgroundColor = currentColor;
     } else {
-        brush.backgroundColor = 'rgb(245, 245, 220)'
+        brush.backgroundColor = 'rgb(248, 248, 248)'
     }
 }
 
