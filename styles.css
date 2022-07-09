@@ -2,20 +2,133 @@
     --grid-cols: 4;
     --grid-rows: 4;
 }
+
+body {
+    background-color: rgb(255, 202, 181);
+}
+
+* {
+    font-family: 'Courier New', monospace;
+}
+
+.header {
+    text-align: center;
+    font-size: 48px;
+    text-decoration: underline;
+    margin: 24px 0px 72px 0px;
+    font-weight: 900;
+    text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.5);
+}
+
 .canvas {
     display: grid;
-    gap: 1px;
+    gap: 0px;
     grid-template-columns: repeat(var(--grid-cols), 1fr);
     grid-template-rows: repeat(var(--grid-cols), 1fr);
-    width: 700px;
-    height: 700px;
-    background-color: beige;
+    width: 600px;
+    height: 600px;
+    background-color: rgb(248, 248, 248);
 }
 
 .pixel {
     width: 1fr;
-    height: 1fr;
-    outline-style: solid;
-    outline-color: gray;
-    outline-width: 1px;    
+    height: 1fr;  
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:auto;
+    box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.5);
+    width: fit-content;
+}
+
+.settings {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(255, 214, 139);
+    height: 600px;
+    width: 200px;
+}
+
+.settingsHdr {
+    font-size: 24px;
+    margin-bottom: auto;
+    margin-top: 16px;
+    text-decoration: underline;
+    font-weight: 900;
+}
+
+input[type='color'] {
+    -webkit-appearance: none;
+    width: 175px;
+    height: 70px;
+    border: none;
+    padding: 10px;
+    background-color: lightsalmon;
+    margin: 12px;
+    border-radius: 8px;
+}
+
+button {
+    width: 175px;
+    height: 70px;
+    border-style: solid;
+    border-width: 10px;
+    border-radius: 8px;
+    border-color: lightsalmon;
+    margin: 12px;
+    font-size: 18px;
+    background-color: rgb(255, 247, 241);
+}
+
+#sliderOut {
+    font-size: 28px;
+    margin: 12px;
+}
+input[type='range'] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 175px;
+    height: 12px;
+    border-radius: 6px;
+    background-color: rgb(255, 247, 241);
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+input[type='range']:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    background: lightsalmon;
+    cursor: pointer;
+}
+
+input[type='range']::-moz-range-thumb {
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    background: lightsalmon;
+    cursor: pointer;
+}
+
+button:hover, input[type='color']:hover {
+    transform: scale(1.05);
+}
+
+.active {
+    transform: scale(0.95);
+    background-color: rgb(255, 232, 213);
 }

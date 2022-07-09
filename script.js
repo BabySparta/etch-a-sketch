@@ -12,13 +12,17 @@ const rainbow = document.querySelector('.rainbowBtn');
 const color = document.querySelector('.colorBtn');
 const colorPicker = document.querySelector('.colorPanel');
 const eraser = document.querySelector('.eraserBtn');
+const reset = document.querySelector('.reset');
+const size = document.getElementById('slider').value 
+
 
 // Changes current color and mode
 function setCurrentColor(newColor) {
     currentColor = newColor
 }
 function setCurrentMode(newMode) {
-    currentMode = newMode
+    modeChange(newMode);
+    currentMode = newMode;
 }
 
 // changes variables when the buttons are pressed
@@ -26,6 +30,7 @@ colorPicker.oninput = (e) => (setCurrentColor(e.target.value));
 color.onclick = () => setCurrentMode('color');
 rainbow.onclick = () => setCurrentMode('rainbow');
 eraser.onclick = () => setCurrentMode('eraser');
+reset.onclick = () => newGrid();
 
 // Makes the grid and adds the event listeners to each created div
 function makeGrid (rows, cols) {
@@ -72,6 +77,7 @@ document.getElementById("slider").oninput = function() {
 const sliderOutput = () => {
     let val = document.getElementById('slider').value 
     document.getElementById('sliderOut').textContent = val + 'x' + val
+    let currentSize = val
 }
 
 // Makes a new grid by removing the old one and creating the new one to the correct size based on the slider
@@ -84,7 +90,20 @@ const newGrid = () => {
 }
 
 const modeChange = (newMode) => {
-    
+    if(currentMode === 'color') {
+        color.classList.remove('active')
+    } else if(currentMode === 'rainbow') {
+        rainbow.classList.remove('active')
+    } else {
+        eraser.classList.remove('active')
+    }
+    if(newMode === 'color') {
+        color.classList.add('active')
+    } else if(newMode === 'rainbow') {
+        rainbow.classList.add('active')
+    } else {
+        eraser.classList.add('active')
+    }
 }
 
 

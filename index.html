@@ -9,18 +9,19 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    <h1>Etch-a-Sketch!</h1>
-    <h2>Draw Settings</h2>
-    <h3>Brush Color:</h3>
-    <input type="color" class="colorPanel" value="#008000">
-    <button class="rainbowBtn">Rainbow Mode</button>
-    <button class="colorBtn">Color Mode</button>
-    <button class="eraserBtn">Eraser Mode</button>
-
-    <div>
-        <input type="range" min="4" max="64" id="slider" value="16"/>
-        <output id="sliderOut"></output>
-    </div> 
-    <div class="canvas"></div>
+    <h1 class="header">Etch-a-Sketch!</h1>
+    <div class="content">
+        <div class="settings">
+            <h2 class="settingsHdr">Draw Settings</h2>
+            <input type="color" class="colorPanel" value="#008000">
+            <button class="rainbowBtn">Rainbow Mode</button>
+            <button class="colorBtn active">Color Mode</button>
+            <button class="eraserBtn">Eraser Mode</button>
+            <output id="sliderOut"></output>
+            <input type="range" min="4" max="64" id="slider" value="16"/>
+            <button class="reset">Reset</button>
+        </div>
+        <div class="canvas"></div>
+    </div>
 </body>
 </html>
